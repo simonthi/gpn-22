@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Display a map on a webpage</title>
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    </head>
+    <body>
+        <div id="map"></div>
+        <nav id="filter-group" class="filter-group"></nav>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiaGF3LXNpbSIsImEiOiJjbHc2NmV6M2gxbThvMmltdXhiaWF2Mm9uIn0.VzmPZiqtj0arzdxR3zSBQg';
+
+
+
+
+            const places = {
+
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "name": "HfG",
+                            "type": "venue",
+                            'icon': 'dot-11'
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                8.383677,
+                                49.001982
+                            ],
+                            "type": "Point"
+                        },
+                        "id": "0bafe57a53198c363bf26582838da7ca"
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "name": "Bundesverfassungsgericht",
+                            "type": "poi",
+                            'icon': 'dot-11'
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                8.401674,
+                                49.012933
+                            ],
+                            "type": "Point"
+                        },
+                        "id": "292919e3588fe620a24e22bc8a3bf6b4"
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "name": "ZKM",
+                            "type": "museum",
+                            'icon': 'dot-11'
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                8.383717,
+                                49.002659
+                            ],
+                            "type": "Point"
+                        },
+                        "id": "d4b455af141d78ada3ea15ebc0e48e2f"
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "name": "Karlsruhe Hauptbahnhof",
+                            "type": "transit",
+                            'icon': 'dot-11'
+                        },
+                        "geometry": {
+                            "coordinates": [
+                                8.401945,
+                                48.993613
+                            ],
+                            "type": "Point"
+                        },
+                        "id": "e9b26b96bf95743f78928cd45262c841"
+                    }
+                ],
+                "type": "FeatureCollection"
+            };
+
+            const filterGroup = document.getElementById('filter-group');
+            const map = new mapboxgl.Map({
+                container: 'map', // container ID
+                center: [8.40, 49.006], // starting position [lng, lat]
+                zoom: 13.5, // starting zoom
+                style: 'mapbox://styles/haw-sim/clw66snph02ry01qubqce2o52'
+            });
+
+            map.on('load', () => {
+                // Add a GeoJSON source containing place coordinates and information.
+                map.addSource('places', {
+                    'type': 'geojson',
+                    'data': places
+                });
+
+
+                for (const feature of places.features) {
+                    const type = feature.properties.type;
+                    const symbol = feature.properties.icon;
+                    const name = feature.properties.name;
+                    const layerID = `poi-${type}`;
+
+                    // Add a layer for this symbol type if it hasn't been added already.
+                    if (!map.getLayer(layerID)) {
+                        map.addLayer({
+                            'id': layerID,
+                            'type': 'symbol',
+                            'source': 'places',
+                            'layout': {
+                                // These icons are a part of the Mapbox Light style.
+                                // To view all images available in a Mapbox style, open
+                                // the style in Mapbox Studio and click the "Images" tab.
+                                // To add a new image to the style at runtime see
+                                // https://docs.mapbox.com/mapbox-gl-js/example/add-image/
+                                'text-field': ['get', 'name'],
+                                'text-variable-anchor': ['top', 'bottom', 'left', 'right'],
+                                'text-radial-offset': 0.5,
+                                'text-justify': 'auto',
+                                'text-size': 12,
+                                'text-font': [
+                                    'Overpass Mono SemiBold',
+                                ],
+                                'icon-image': `${symbol}`,
+                                'icon-allow-overlap': true
+                            },
+                            paint: {
+                                'text-color': "#0000ff",
+                            },
+                            'filter': ['==', 'type', type]
+                        });
+
+                        // Add checkbox and label elements for the layer.
+                        const input = document.createElement('input');
+                        input.type = 'checkbox';
+                        input.id = layerID;
+                        input.checked = true;
+                        filterGroup.appendChild(input);
+
+                        const label = document.createElement('label');
+                        label.setAttribute('for', layerID);
+                        label.textContent = type;
+                        filterGroup.appendChild(label);
+
+                        // When the checkbox changes, update the visibility of the layer.
+                        input.addEventListener('change', (e) => {
+                            map.setLayoutProperty(
+                                layerID,
+                                'visibility',
+                                e.target.checked ? 'visible' : 'none'
+                            );
+                        });
+                    }
+                }
+            });
+
+        </script>
+
+    </body>
+</html>
+
