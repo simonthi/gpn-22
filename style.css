@@ -7,6 +7,7 @@
 body { 
     margin: 0; padding: 0; 
     font-family: 'Overpass Mono', monospace;
+    font-weight: 400;
 }
 #map { 
     position: absolute; top: 0; bottom: 0; width: 100%; 
@@ -21,6 +22,16 @@ body {
     text-align: center;
 }
 
+.info {
+    position: absolute;
+    bottom: 36px;
+    z-index: 1;
+    right: 12px;
+    width: auto;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
 .mapboxgl-map {
     font-family: 'Overpass Mono', monospace;
 }
@@ -28,13 +39,12 @@ body {
     font:
         12px/20px 'Overpass Mono',
         monospace;
-    font-weight: 600;
+    font-weight: 400;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
     z-index: 1;
-    border-radius: 3px;
-    width: 120px;
+    width: auto;
     color: #fff;
 }
 
