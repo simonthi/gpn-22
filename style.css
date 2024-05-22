@@ -1,15 +1,23 @@
+@font-face {
+
+    font-family: Overpass Mono;
+    src: url('assets/fonts/OverpassMono-VariableFont_wght.ttf');
+}
+
 body { 
     margin: 0; padding: 0; 
+    font-family: 'Overpass Mono', monospace;
 }
 #map { 
     position: absolute; top: 0; bottom: 0; width: 100%; 
 }
 
+.mapboxgl-map {
+    font-family: 'Overpass Mono', monospace;
+}
 .filter-group {
     font:
-        12px/20px 'Overpass Mono SemiBold',
-        Arial,
-        Helvetica,
+        12px/20px 'Overpass Mono',
         monospace;
     font-weight: 600;
     position: absolute;
@@ -21,41 +29,63 @@ body {
     color: #fff;
 }
 
-.filter-group input[type='checkbox']:first-child + label {
-    border-radius: 3px 3px 0 0;
-}
-
-.filter-group label:last-child {
-    border-radius: 0 0 3px 3px;
-    border: none;
-}
 
 .filter-group input[type='checkbox'] {
     display: none;
 }
 
 .filter-group input[type='checkbox'] + label {
-    background-color: #3386c0;
+    background-color: #f8f8f8;
     display: block;
     cursor: pointer;
     padding: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .filter-group input[type='checkbox'] + label {
-    background-color: #3386c0;
+    background-color: #ffffff;
 }
 
 .filter-group input[type='checkbox'] + label:hover,
 .filter-group input[type='checkbox']:checked + label {
-    background-color: #4ea0da;
+    background-color: #f8f8f8;
 }
 
 .filter-group input[type='checkbox']:not(:checked) + label{
-    padding-left: 24px;
+    padding-left: 22.5px;
 }
 
 .filter-group input[type='checkbox']:checked + label:before {
     content: 'X';
     margin-right: 5px;
 }
+
+.listings {
+    height: 100%;
+    overflow: auto;
+    padding-bottom: 60px;
+}
+
+.listings .item {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.listings .item:last-child {
+    border-bottom: none;
+}
+
+
+.listings .item .title small {
+    font-weight: 400;
+}
+
+.listings .item.active .title,
+.listings .item .title:hover {
+    color: #ffffff;
+}
+
+.listings .item.active {
+    background-color: #f8f8f8;
+}
+

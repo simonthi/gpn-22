@@ -1,0 +1,222 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "bars",
+        "name": "Gottesauer Eck",
+        "link": "https://gottesauereck.de/"
+      },
+      "geometry": {
+        "coordinates": [
+          8.424548,
+          49.00721
+        ],
+        "type": "Point"
+      },
+      "id": "04430c73464a9f97fe8c50e469f07447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "HfG",
+        "type": "venue",
+        "info": "Hochschule für Gestaltung. Veranstaltungsort der Gulaschprogrammiernacht.",
+        "link": "https://hfg-karlsruhe.de/"
+      },
+      "geometry": {
+        "coordinates": [
+          8.383677,
+          49.001982
+        ],
+        "type": "Point"
+      },
+      "id": "0bafe57a53198c363bf26582838da7ca"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "café-mats",
+        "type": "bars",
+        "link": "https://www.instagram.com/cafe_mats/"
+      },
+      "geometry": {
+        "coordinates": [
+          8.389775,
+          49.008836
+        ],
+        "type": "Point"
+      },
+      "id": "1b1873cce258e6a92890b9df10517f37"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bundesverfassungsgericht",
+        "type": "architecture",
+        "info": "Fertiggestellt 1969, gestaltet von Architekt Baumgarten. ",
+        "link": "https://de.wikipedia.org/wiki/Baumgarten-Bau"
+      },
+      "geometry": {
+        "coordinates": [
+          8.401674,
+          49.012933
+        ],
+        "type": "Point"
+      },
+      "id": "292919e3588fe620a24e22bc8a3bf6b4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "place_name": "Stephanienstraße 74, 76133 Karlsruhe, Germany",
+        "type": "architecture",
+        "link": "https://www.sosbrutalism.org/cms/15802395#15890569",
+        "info": "Brutalistisches Gebäude erbaut von Reinhard Gieselmann.",
+        "name": "Alten- und Pflegeheim Benckiserstift."
+      },
+      "geometry": {
+        "coordinates": [
+          8.390952,
+          49.01123
+        ],
+        "type": "Point"
+      },
+      "id": "573f8f15a44cc6508fe733d727e9aaf2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ßspace // die Anstoß e.V.",
+        "type": "museum",
+        "info": "Was ist die Anstoß?  „Die Anstoß e.V.“ ist eine unabhängige Initiative mit Sitz in Karlsruhe zur Förderung der freien Kulturszene in den Bereichen Kunst und Design, Architektur und Urbanismus, Musik und Theater, Literatur und Philosophie sowie weiteren gesellschaftlich relevanten Themen. ",
+        "link": "https://dieanstoss.de/"
+      },
+      "geometry": {
+        "coordinates": [
+          8.410358,
+          49.008384
+        ],
+        "type": "Point"
+      },
+      "id": "765c5c21108d3a0740540a6e8e043e5c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Entropia e.V.",
+        "type": "poi",
+        "info": "Hacker*innenspace.",
+        "link": "https://entropia.de/"
+      },
+      "geometry": {
+        "coordinates": [
+          8.407114,
+          49.006439
+        ],
+        "type": "Point"
+      },
+      "id": "7c29abf822859f31e08226725e6d71f0"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Luis Leu",
+        "type": "museum",
+        "link": "http://luisleu.de/",
+        "info": "Raum für Kunst."
+      },
+      "geometry": {
+        "coordinates": [
+          8.407528,
+          49.000722
+        ],
+        "type": "Point"
+      },
+      "id": "8ba8ec5446fc26205afb92dc8893e4ac"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Badischer Kunstverein",
+        "type": "museum",
+        "link": "https://badischer-kunstverein.de/",
+        "info": "Der Badische Kunstverein in Karlsruhe, 1818 gegründet, ist der zweitälteste Kunstverein in Deutschland. Seit dem frühen 19. bis ins 21. Jahrhundert engagiert er sich in der Vermittlung und Förderung zeitgenössischer Kunst."
+      },
+      "geometry": {
+        "coordinates": [
+          8.399747,
+          49.011128
+        ],
+        "type": "Point"
+      },
+      "id": "c5ce78a56d1bc525a1aa7d9fae3282aa"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ZKM",
+        "type": "museum",
+        "link": "https://zkm.de/",
+        "info": "Zentrum für Kunst und Medien."
+      },
+      "geometry": {
+        "coordinates": [
+          8.383717,
+          49.002659
+        ],
+        "type": "Point"
+      },
+      "id": "d4b455af141d78ada3ea15ebc0e48e2f"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Karlsruhe Hauptbahnhof",
+        "type": "transit"
+      },
+      "geometry": {
+        "coordinates": [
+          8.401945,
+          48.993613
+        ],
+        "type": "Point"
+      },
+      "id": "e9b26b96bf95743f78928cd45262c841"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Seminar",
+        "type": "bars",
+        "info": "Kneipe."
+      },
+      "geometry": {
+        "coordinates": [
+          8.411213,
+          49.009144
+        ],
+        "type": "Point"
+      },
+      "id": "f5ffff22894f0f8a654769ed5f6e1d2c"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "wieoftnoch",
+        "type": "museum",
+        "info": "Raum für Kunst.",
+        "link": "https://wieoftnoch.de/"
+      },
+      "geometry": {
+        "coordinates": [
+          8.420378,
+          49.005312
+        ],
+        "type": "Point"
+      },
+      "id": "f979c9fb0a6f57b8bed916e97ad82c6b"
+    }
+  ],
+  "type": "FeatureCollection"
+}
