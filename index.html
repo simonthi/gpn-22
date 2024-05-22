@@ -9,6 +9,7 @@
         <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
     </head>
     <body>
+        <div class="title">GPN 22 map</div>
         <div id="map"></div>
         <nav id="filter-group" class="filter-group"></nav>
         <script>
@@ -81,6 +82,8 @@
                                         "#008000",
                                         ["==", layerID , "poi-transit"],
                                         "#4b0082",
+                                        ["==", layerID , "poi-architecture"],
+                                        "#808000",
                                         "#0000ff",
                                     ]
 
@@ -107,6 +110,8 @@
                                 label.style.color = "#008000";
                             } else if (type == "transit"){
                                 label.style.color = "#4b0082";
+                            } else if (type == "architecture"){
+                                label.style.color = "#808000";
                             } else {
                                 label.style.color = "#0000ff";   
                             }
@@ -127,7 +132,7 @@
                 map.on('click', (event) => {
                     /* Determine if a feature in the "locations" layer exists at that point. */
                     const features = map.queryRenderedFeatures(event.point, {
-                        layers: ['poi-museum', 'poi-bars', 'poi-venue', 'poi-poi', 'poi-transit']
+                        layers: ['poi-museum', 'poi-bars', 'poi-venue', 'poi-poi', 'poi-transit', 'poi-architecture']
                     });
 
                     /* If it does not exist, return */
